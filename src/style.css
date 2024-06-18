@@ -6,6 +6,7 @@
   text-align: center;
 }
 body {
+  height: 10vh;
   background: linear-gradient(
     270deg,
     rgb(157, 83, 175) 0%,
@@ -13,7 +14,6 @@ body {
     rgb(2, 118, 64) 100%
   );
 }
-
 h1 {
   background-color: rgb(19, 2, 60);
   color: white;
@@ -30,8 +30,8 @@ h1 {
 }
 .choice {
   font-size: 4.5rem;
-  min-width: 115px;
-  min-height: 115px;
+  min-width: 7.188rem;
+  min-height: 7.188rem;
   background-size: 18rem;
   display: flex;
   justify-content: center;
@@ -55,7 +55,7 @@ h1 {
 }
 #resultDisplay {
   font-size: 2rem;
-  margin: 30px 20px;
+  margin: 1.875rem 1.25rem;
   background-color: rgb(19, 2, 60);
   color: beige;
   display: inline;
@@ -77,7 +77,7 @@ h1 {
 }
 button {
   font-size: 1rem;
-  margin: 30px 20px;
+  margin: 1.875rem 1.25rem;
   background-color: rgb(19, 2, 60);
   color: beige;
   display: inline;
@@ -88,4 +88,50 @@ button {
 }
 button:hover {
   background-color: rgb(94, 60, 126);
+}
+@media only screen and (max-width: 650px) {
+  html {
+    font-size: 80%;
+  }
+  .choice {
+    background-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  html {
+    font-size: 60%;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+
+  .choice {
+    background-size: 40%;
+  }
+  .scoreBoard {
+    flex-wrap: wrap;
+  }
+  .choices {
+    flex-wrap: wrap;
+  }
+  .resultContainer {
+    margin: 3rem 3rem;
+  }
+  #resultDisplay {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 182px) {
+  h1 {
+    height: 10rem;
+  }
+  .resultContainer {
+    margin: 2rem 2rem;
+  }
+  #resultDisplay {
+    font-size: 0.95rem;
+    height: 3rem;
+  }
 }

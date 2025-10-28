@@ -1,137 +1,191 @@
+/*  Global Reset */
 * {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  font-weight: bold;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
   text-align: center;
-}
-body {
-  height: 10vh;
-  background: linear-gradient(
-    270deg,
-    rgb(157, 83, 175) 0%,
-    rgb(5, 114, 142) 30%,
-    rgb(2, 118, 64) 100%
-  );
-}
-h1 {
-  background-color: rgb(19, 2, 60);
-  color: white;
-  height: 5rem;
-  line-height: 5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
+/*  Body Styling */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #8477ec, #c4cadf, #acc9e6);
+  background-size: 300% 300%;
+  animation: gradientFlow 8s ease infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Animated Gradient Background */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/*  Title */
+h1 {
+  width: 100%;
+  background: rgb(42, 5, 153);
+  color: #fff;
+  height: 5rem;
+  line-height: 5rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/*  Choice Section */
 .choices {
   display: flex;
   justify-content: center;
-  gap: 3.5rem;
-  margin-top: 3.5rem;
-  margin-bottom: 1.5rem;
+  gap: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
+
 .choice {
-  font-size: 4.5rem;
-  min-width: 7.188rem;
-  min-height: 7.188rem;
-  background-size: 18rem;
+  font-size: 4rem;
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 50%;
+  background: rgb(40, 58, 175);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(19, 2, 60);
-  border-radius: 50%;
-}
-.choice:hover {
+  color: white;
+  box-shadow: 0 6px 15px rgba(3, 40, 85, 0.6);
   cursor: pointer;
-  background-color: rgb(65, 185, 225);
-  border-radius: 50%;
+  transform: scale(1);
 }
 
+.choice:hover {
+  background: rgb(42, 5, 153);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(9, 94, 198, 0.6);
+}
+
+/* Choices Display */
 #youDisplay,
 #computerDisplay {
-  font-size: 2rem;
+  font-size: 1.8rem;
+  color: rgb(42, 5, 153);
+  margin-top: 1rem;
 }
 
+/*  Result Container */
 .resultContainer {
-  margin: 3.5rem 3.5rem;
+  margin: 2rem auto;
+  text-align: center;
 }
+
 #resultDisplay {
   font-size: 2rem;
-  margin: 1.875rem 1.25rem;
-  background-color: rgb(19, 2, 60);
-  color: beige;
-  display: inline;
-  padding: 1rem;
+  color: #f5f5f5;
+  background: rgb(42, 5, 153);
+  padding: 1rem 2rem;
   border-radius: 1rem;
+  display: inline-block;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  transition: background-color 0.4s ease, transform 0.3s ease;
 }
 
+#resultDisplay.win {
+  background-color: #16a34a;
+  transform: scale(1.1);
+}
+
+#resultDisplay.lose {
+  background-color: #dc2626;
+  transform: scale(1.1);
+}
+
+#resultDisplay.draw {
+  background-color: #5b21b6;
+  transform: scale(1.1);
+}
+
+/*  Scoreboard */
 .scoreBoard {
   display: flex;
-  font-size: 2rem;
   justify-content: center;
   align-items: center;
   gap: 5rem;
-}
-#yourScore,
-#compScore {
-  font-size: 1.5rem;
-  color: aliceblue;
-}
-button {
-  font-size: 1rem;
-  margin: 1.875rem 1.25rem;
-  background-color: rgb(19, 2, 60);
-  color: beige;
-  display: inline;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  border-color: rgb(255, 0, 238);
-  cursor: pointer;
-}
-button:hover {
-  background-color: rgb(94, 60, 126);
-}
-@media only screen and (max-width: 650px) {
-  html {
-    font-size: 80%;
-  }
-  .choice {
-    background-size: 50%;
-  }
+  color: rgb(42, 5, 153);
+  font-size: 1.8rem;
+  margin-top: 2rem;
 }
 
-@media only screen and (max-width: 400px) {
+#yourScore,
+#compScore {
+  font-size: 2rem;
+  color: #317cec;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/*  Reset Button */
+button {
+  font-size: 1rem;
+  background: rgb(40, 58, 175);
+  color: #f5f5f5;
+  border: 2px solid #2f079c;
+  padding: 0.8rem 2rem;
+  border-radius: 0.8rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #3743e8, #341af9);
+  box-shadow: 0 0 15px rgba(21, 0, 255, 0.839);
+  transform: translateY(-3px);
+}
+
+/*  Responsive Design */
+@media (max-width: 650px) {
   html {
-    font-size: 60%;
+    font-size: 90%;
+  }
+  .choices {
+    gap: 2rem;
   }
   h1 {
     font-size: 2rem;
   }
+}
 
-  .choice {
-    background-size: 40%;
-  }
-  .scoreBoard {
-    flex-wrap: wrap;
+@media (max-width: 400px) {
+  html {
+    font-size: 75%;
   }
   .choices {
-    flex-wrap: wrap;
+    gap: 1.5rem;
   }
-  .resultContainer {
-    margin: 3rem 3rem;
-  }
-  #resultDisplay {
-    font-size: 1rem;
+  .scoreBoard {
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 
-@media only screen and (max-width: 182px) {
+@media (max-width: 250px) {
+  html {
+    font-size: 60%;
+  }
   h1 {
-    height: 10rem;
-  }
-  .resultContainer {
-    margin: 2rem 2rem;
-  }
-  #resultDisplay {
-    font-size: 0.95rem;
-    height: 3rem;
+    line-height: normal;
+    padding: 1rem 0;
   }
 }

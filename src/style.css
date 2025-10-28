@@ -1,4 +1,4 @@
-/*  Global Reset */
+/* 🌐 Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -9,18 +9,20 @@
   transition: all 0.3s ease;
 }
 
-/*  Body Styling */
+/* 🌈 Body Styling */
 body {
   min-height: 100vh;
-  background: linear-gradient(135deg, #8477ec, #c4cadf, #acc9e6);
+  background: linear-gradient(135deg, #7e6bf7, #b9b8f0, #9fd4ff);
   background-size: 300% 300%;
   animation: gradientFlow 8s ease infinite;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 2rem;
 }
 
-/* Animated Gradient Background */
+/* ✨ Animated Gradient Background */
 @keyframes gradientFlow {
   0% {
     background-position: 0% 50%;
@@ -33,19 +35,20 @@ body {
   }
 }
 
-/*  Title */
+/* 🎮 Title */
 h1 {
   width: 100%;
-  background: rgb(42, 5, 153);
+  background: linear-gradient(90deg, #2a0599, #5337df);
   color: #fff;
   height: 5rem;
   line-height: 5rem;
-  letter-spacing: 1px;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+  font-size: 2.2rem;
 }
 
-/*  Choice Section */
+/* 🧩 Choice Section */
 .choices {
   display: flex;
   justify-content: center;
@@ -57,104 +60,124 @@ h1 {
 
 .choice {
   font-size: 4rem;
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 7rem;
+  height: 7rem;
   border-radius: 50%;
-  background: rgb(40, 58, 175);
+  background: radial-gradient(circle, #2a3eb1, #1b2c87);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  box-shadow: 0 6px 15px rgba(3, 40, 85, 0.6);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
   cursor: pointer;
   transform: scale(1);
+  position: relative;
+  overflow: hidden;
 }
 
 .choice:hover {
-  background: rgb(42, 5, 153);
-  transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(9, 94, 198, 0.6);
+  transform: scale(1.12) rotate(5deg);
+  background: radial-gradient(circle, #341af9, #1b2c87);
+  box-shadow: 0 0 25px rgba(53, 91, 255, 0.8);
 }
 
-/* Choices Display */
+/* Add glowing ring on hover */
+.choice::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  transition: 0.4s ease;
+}
+
+.choice:hover::after {
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+/* 🧍 You & Computer Display */
 #youDisplay,
 #computerDisplay {
   font-size: 1.8rem;
-  color: rgb(42, 5, 153);
+  color: #2a0599;
   margin-top: 1rem;
 }
 
-/*  Result Container */
+/* 🏆 Result Container */
 .resultContainer {
   margin: 2rem auto;
   text-align: center;
 }
 
 #resultDisplay {
-  font-size: 1.5rem;
-  color: #f5f5f5;
-  background: rgb(42, 5, 153);
-  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  color: #fff;
+  background: #2a0599;
+  padding: 1rem 2.5rem;
   border-radius: 1rem;
   display: inline-block;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-  transition: background-color 0.4s ease, transform 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  letter-spacing: 0.5px;
 }
 
 #resultDisplay.win {
   background-color: #16a34a;
   transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(22, 163, 74, 0.6);
 }
 
 #resultDisplay.lose {
   background-color: #dc2626;
   transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.6);
 }
 
 #resultDisplay.draw {
   background-color: #5b21b6;
   transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(91, 33, 182, 0.6);
 }
 
-/*  Scoreboard */
+/* 📊 Scoreboard */
 .scoreBoard {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5rem;
-  color: rgb(42, 5, 153);
+  gap: 4rem;
+  color: #2a0599;
   font-size: 1.8rem;
   margin-top: 2rem;
 }
 
-#yourScore,
-#compScore {
-  font-size: 2rem;
-  color: #317cec;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+.score p:first-child {
+  font-size: 2.4rem;
+  color: #005ae0;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
 }
 
-/*  Reset Button */
+/* 🔁 Reset Button */
 button {
   font-size: 1rem;
-  background: rgb(40, 58, 175);
-  color: #f5f5f5;
-  border: 2px solid #2f079c;
-  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, #2a3eb1, #1b2c87);
+  color: #fff;
+  border: 2px solid #14066b;
+  padding: 0.8rem 2.5rem;
   border-radius: 0.8rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 2rem;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  letter-spacing: 1px;
 }
 
 button:hover {
   background: linear-gradient(135deg, #3743e8, #341af9);
-  box-shadow: 0 0 15px rgba(21, 0, 255, 0.839);
-  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(53, 91, 255, 0.9);
+  transform: translateY(-4px);
 }
 
-/*  Responsive Design */
+/* 📱 Responsive Design */
 @media (max-width: 650px) {
   html {
     font-size: 90%;
@@ -163,7 +186,7 @@ button:hover {
     gap: 2rem;
   }
   h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 
